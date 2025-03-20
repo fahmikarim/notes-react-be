@@ -1,0 +1,28 @@
+GET http://localhost:5000/notes
+
+###
+GET http://localhost:5000/notes/1
+
+###
+POST http://localhost:5000/notes
+Content-Type: application/json
+
+{
+    "title": "Hari-hari banyak tugas",
+    "content": "Beberapa hari ini tugasnya banyak sekali, tetapi harus tetap semangat",
+    "field": "tugas"
+}
+
+###
+PATCH http://localhost:5000/notes/1
+Content-Type: application/json
+
+{
+    "title": "Hari Kedua Ramadhan",
+    "content": "Hari Kedua puasa jangan lengah dan terlalu dantai karena banyak tugas",
+    "field": "Ramadhan"
+}
+
+###
+DELETE http://localhost:5000/notes/2
+Content-Type: application/json
