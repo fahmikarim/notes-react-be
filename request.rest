@@ -1,28 +1,49 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "name": "michael angelo",
+    "password": "kamubmukbang"
+}
+################################################
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "name": "testuser",
+    "password": "testpassword"
+}
+
+###
 GET http://localhost:5000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NDc3ODY0MjYsImV4cCI6MTc0Nzc5MDAyNn0.TDZ2ei4zHCU1okm2zxXonz5H3uRV6T5vFb3ulqq3UdA
 
-###
-GET http://localhost:5000/notes/1
-
-###
-POST http://localhost:5000/notes
+### create notes
+POST http://localhost:5000/notes/add-notes
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NDc3ODY0MjYsImV4cCI6MTc0Nzc5MDAyNn0.TDZ2ei4zHCU1okm2zxXonz5H3uRV6T5vFb3ulqq3UdA
 
 {
-    "title": "Hari-hari banyak tugas",
-    "content": "Beberapa hari ini tugasnya banyak sekali, tetapi harus tetap semangat",
-    "field": "tugas"
+  "title": "Judul Note",
+  "content": "Isi note yang ingin dibuat",
+  "field": "Kategori atau bidang note"
 }
 
-###
-PATCH http://localhost:5000/notes/1
-Content-Type: application/json
+### Update Note 
+PUT http://localhost:5000/notes/update-notes/1 
+Content-Type: application/json 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NDc3ODY0MjYsImV4cCI6MTc0Nzc5MDAyNn0.TDZ2ei4zHCU1okm2zxXonz5H3uRV6T5vFb3ulqq3UdA
 
 {
-    "title": "Hari Kedua Ramadhan",
-    "content": "Hari Kedua puasa jangan lengah dan terlalu dantai karena banyak tugas",
-    "field": "Ramadhan"
+"title": "Updated Note 1", "content": "This note has been updated", "field": "Updated"
 }
 
-###
-DELETE http://localhost:5000/notes/2
-Content-Type: application/json
+### DELETE
+Delete http://localhost:5000/notes/delete-notes/1 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3NDc3ODY0MjYsImV4cCI6MTc0Nzc5MDAyNn0.TDZ2ei4zHCU1okm2zxXonz5H3uRV6T5vFb3ulqq3UdA
+
+### Logout 
+DELETE http://localhost:5000/logout
+
+
+
